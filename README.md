@@ -8,11 +8,9 @@ Biological sequences exhibit hierarchical coevolutionary structure:
 
 | Order | Tensor | Biology | Math |
 |-------|--------|---------|------|
-| **0th** | Fields (L, A) | Sitewise conservation (PSSM) | log p(x₀) |
+| **0th** | Fields (L, A) | Conservation | log p(x₀) |
 | **1st** | Jacobian (L, A, L, A) | Pairwise coevolution (contacts) | ∂ log p / ∂x |
 | **2nd** | Hessian (L, A, L, A, L, A) | Triwise epistasis | ∂² log p / ∂x² |
-
-Where **L** = sequence length, **A** = alphabet size (20 amino acids).
 
 ### Key Insight
 
@@ -57,14 +55,14 @@ HOR/
 │   └── tensor_reduction.ipynb          # Interactive Hessian slicing
 ├── data/
 │   ├── AF-P0AA25-F1-msa_v6.npz        # Thioredoxin 1 MSA (19k seqs, L=101)
-│   ├── AF-P0AA25-F1-model_v6_contacts.npz  # AlphaFold contacts
+│   ├── AF-P0AA25-F1-model_v6_contacts.npz  # AlphaFold contacts of Thioredoxin 1
 │   └── msa_prep.ipynb                  # Data preprocessing
 └── results/                            # Computed Hessians (~7GB each)
 ```
 
 ## Dataset
 
-**Thioredoxin 1** (E. coli, UniProt: P0AA25)
+**AlphaFold Thioredoxin 1**
 - Function: Redox protein, reduces disulfide bonds
 - Length: 101 amino acids
 - MSA: 19,413 sequences (AlphaFold v6)
@@ -83,9 +81,6 @@ Q = (H + H¹² + H¹³ + H²³ + H¹²³ + H¹³²) / 6
 
 This symmetrization is **model-agnostic** — works for symmetric models (MRF, autoencoders) and asymmetric models (transformers, autoregressive).
 
-### No APC Correction
-
-For **synthetic Potts-sampled MSAs** (i.i.d. sequences), we use raw Frobenius norm reduction without Average Product Correction (APC). APC is only needed to remove phylogenetic bias in natural sequences.
 
 ## Results
 
@@ -156,4 +151,5 @@ For questions or collaboration: dylanmontanamarshall@gmail.com
 # CHECKPOINT
 
 results/ generated on 20260123
+
 
