@@ -1,6 +1,6 @@
-**Extracting epistatic interactions from protein sequences via multivariate Taylor expansion**
+**Extracting higher order interactions from generative models of protein sequences via multivariate MacLaurin expansion**
 
-This framework extends pairwise sequence saliency analysis to capture higher-order epistatic interactions using Jacobian and Hessian tensors of sequence autoencoders.
+This framework extends pairwise sequence saliency analysis to capture 0th order (one below) and 2nd (one above) interactions, expanding on [this work](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1).
 
 ## Overview
 
@@ -16,7 +16,7 @@ Where **L** = sequence length, **A** = alphabet size (20 amino acids).
 
 ### Key Insight
 
-The Taylor expansion of a trained autoencoder f<sub>θ</sub>: ℝ<sup>L×A</sup> → ℝ<sup>L×A</sup> around reference sequence x₀ yields:
+The MacLaurin expansion of a trained autoencoder f<sub>θ</sub>: ℝ<sup>L×A</sup> → ℝ<sup>L×A</sup> around reference sequence x₀ yields:
 
 ```
 f(x₀ + h) = f(x₀) + J·h + ½H[h,h] + ⅙T[h,h,h] + ⋯
@@ -61,46 +61,6 @@ HOR/
 │   └── msa_prep.ipynb                  # Data preprocessing
 └── results/                            # Computed Hessians (~7GB each)
 ```
-
-## Usage
-
-### Local Development
-
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Compute Jacobians locally (CPU)
-python -c "
-from models import train_mrf, mrf_jacobian
-import numpy as np
-
-data = np.load('data/AF-P0AA25-F1-msa_v6.npz')
-X = data['msa']
-params, _ = train_mrf(X, W_seq, n_epochs=200)
-J = mrf_jacobian(params, L=101, A=20)
-print(f'Jacobian shape: {J.shape}')
-"
-```
-
-### GPU Compute (Modal)
-
-Hessian computation requires H200/B200 GPU due to memory requirements:
-
-```bash
-# Start JupyterLab on H200 GPU
-modal run modal_app.py --gpu h200 --timeout-minutes 480
-
-# Upload data to Modal volume (first time only)
-modal run modal_app.py --upload
-
-# Open the URL and run autoencoders_modal.ipynb
-```
-
-**Memory requirements:**
-- Jacobian (L=101): ~100 MB
-- Hessian (L=60): ~7 GB (subsectioned MSA)
-- Hessian (L=101, full MSA): ~100 GB (requires H200)
 
 ## Dataset
 
@@ -154,7 +114,7 @@ Example triwise slice exhibits non-random structure — see `visualization/tenso
 **Immediate:**
 - Validate on synthetic Potts-sampled MSAs with known h, J, K ground truth
 - Develop nth-order APC method (tensor 2-norm + higher-order correction)
-- Formalize S<sub>n</sub> symmetrization for arbitrary order (abstract algebra)
+- Formalize S<sub>n</sub> symmetrization generalization for arbitrary order (abstract algebra)
 
 **Long-term:**
 - Apply to SOTA models (ESM3, MSA Transformer, AlphaFold3)
@@ -177,10 +137,11 @@ If you use this code, please cite:
 
 ## Related Work
 
-- **seqsal** - Pairwise saliency for contact prediction (Jacobian term)
+- **[seqsal]** - Pairwise saliency for contact prediction (Jacobian term)
 - **Hopf et al. (2017)** - Direct coupling analysis (DCA) for pairwise coevolution
 - **Ekeberg et al. (2013)** - GREMLIN (MRF baseline)
 - **Koo et al. (2024)** - Attribution analysis for protein models
+- **Jumper et al. (2021)** - AlphaFold
 
 ## License
 
@@ -188,10 +149,11 @@ MIT
 
 ## Contact
 
-For questions or collaboration: dylan@example.com
+For questions or collaboration: dylanmontanamarshall@gmail.com
 
 
 
 # CHECKPOINT
 
 results/ generated on 20260123
+
