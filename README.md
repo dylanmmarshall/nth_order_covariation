@@ -14,7 +14,7 @@ Biological sequences exhibit hierarchical coevolutionary structure:
 
 ### Key Insight
 
-The MacLaurin expansion of a trained autoencoder f<sub>θ</sub>: ℝ<sup>L×A</sup> → ℝ<sup>L×A</sup> around reference sequence x₀ yields:
+The MacLaurin expansion of a trained autoencoder f<sub>θ</sub>: ℝ<sup>L×A</sup> → ℝ<sup>L×A</sup>
 
 ```
 f(x₀ + h) = f(x₀) + J·h + ½H[h,h] + ⅙T[h,h,h] + ⋯
@@ -122,5 +122,6 @@ MIT
 ## Contact
 
 For questions or collaboration: dylanmontanamarshall@gmail.com
+
 
 
