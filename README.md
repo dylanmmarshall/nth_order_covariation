@@ -2,7 +2,7 @@
 
 This repository showcases the determination of the first three orders of covariation within a MSA using a multivariate Maclaurin expansion of a trained autoencoder. This framework extends 1st order pairwise sequence saliency analysis to distinguish 0th order sitewise interactions and 2nd order triwise interactions within a MSA.
 
-```
+```Python
 from models import compute_fields, compute_jacobian, compute_hessian 
 # Works with any model: forward_fn(params, x, L, A) -> probs 
 h = compute_fields(forward_fn, params, L, A) # (L, A)
@@ -16,7 +16,7 @@ Ongoing: math and code for 3rd order + relations
 
 If you use this code, please cite:
 
-```Python
+```
 @software{nth_order_covariation2025,
   author = {Marshall, Dylan},
   title = {Nth Order Covariation Determination in MSAs},
