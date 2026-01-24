@@ -16,7 +16,7 @@ Ongoing: math and code for 3rd order + relations
 
 If you use this code, please cite:
 
-```
+```Python
 @software{nth_order_covariation2025,
   author = {Marshall, Dylan},
   title = {Nth Order Covariation Determination in MSAs},
