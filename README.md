@@ -1,4 +1,4 @@
-**Extracting higher order interactions from generative models of protein sequences via multivariate MacLaurin expansion**
+**Extracting higher order interactions from generative models of MSAs with multivariate MacLaurin expansion**
 
 This framework extends pairwise sequence saliency analysis to capture 0th order (one below) and 2nd (one above) interactions, expanding on [this work](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1).
 
@@ -122,4 +122,5 @@ MIT
 ## Contact
 
 For questions or collaboration: dylanmontanamarshall@gmail.com
+
 
