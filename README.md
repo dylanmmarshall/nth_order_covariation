@@ -19,7 +19,7 @@ nth_order_covariation/
 ├── results/                        # Fields, Jacobians, Hessians
 └── visualization/
     ├── modal_app.py                # GPU analysis orchestration
-    └── tensor_reduction_full.ipynb # Reduction & visualization
+    └── tensor_reduction_full.ipynb # Conclusion
 ```
 
 Ongoing: math and code for 3rd order + relations
