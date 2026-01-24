@@ -10,6 +10,8 @@ J = compute_jacobian(forward_fn, params, L, A) # (L, A, L, A)
 H = compute_hessian(forward_fn, params, L, A)  # (L, A, L, A, L, A)
 ```
 
+Ongoing: math and code for 3rd order + relations
+
 ## Citation
 
 If you use this code, please cite:
@@ -17,7 +19,7 @@ If you use this code, please cite:
 ```
 @software{nth_order_covariation2025,
   author = {Marshall, Dylan},
-  title = {Extracting Nth Order Interactions Within Multiple Sequence Alignments Using a Multivariate MacLaurin Expansion},
+  title = {Nth Order Covariation Determination in MSAs},
   year = {2025},
   url = {https://github.com/dylanmmarshall/nth_order_covariation}
 }
