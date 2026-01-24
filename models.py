@@ -180,7 +180,7 @@ def mrf_fields(params, L, A, center=True):
     """Compute 0th-order fields (sitewise conservation) for MRF.
 
     Returns (L, A) tensor: h[i,a] = log p(x=0)_ia
-    This is the constant term in the Taylor expansion — not a derivative.
+    This is the constant term in the Maclaurin expansion — not a derivative.
 
     Args:
         params: MRF parameters
@@ -293,7 +293,7 @@ def lae_fields(params, L, A, center=True):
     """Compute 0th-order fields (sitewise conservation) for LAE.
 
     Returns (L, A) tensor: h[i,a] = log p(x=0)_ia
-    This is the constant term in the Taylor expansion — not a derivative.
+    This is the constant term in the Maclaurin expansion — not a derivative.
 
     Args:
         params: LAE parameters
@@ -455,7 +455,7 @@ def vae_fields(params, L, A, n_enc_layers, n_dec_layers, use_blosum, center=True
     """Compute 0th-order fields (sitewise conservation) for VAE (deterministic mode).
 
     Returns (L, A) tensor: h[i,a] = log p(x=0)_ia
-    This is the constant term in the Taylor expansion — not a derivative.
+    This is the constant term in the Maclaurin expansion — not a derivative.
 
     Args:
         params: VAE parameters
@@ -539,7 +539,7 @@ def compute_fields(forward_fn, params, L, A, center=True):
 
     Returns:
         (L, A) field tensor: h[i,a] = log p(x=0)_ia
-        This is the constant term in the Taylor expansion — not a derivative.
+        This is the constant term in the Maclaurin expansion — not a derivative.
     """
     probs = forward_fn(params, jnp.zeros((L, A)), L, A)
     h = jnp.log(probs + 1e-8)
