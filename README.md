@@ -35,18 +35,7 @@ If you use this code, please cite:
 
 MIT
 
+---
+
 Note: not peer-reviewed work
-
-
-
-
-
-
-
-
-
-
-
-
-
 
