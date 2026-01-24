@@ -9,9 +9,9 @@ If you use this code, please cite:
 ```
 @software{nth_order_covariation2025,
   author = {Marshall, Dylan},
-  title = {Extracting Higher Order Interactions via Multivariate MacLaurin Expansion**},
+  title = {Extracting Nth Order Interactions via Multivariate MacLaurin Expansion**},
   year = {2025},
-  url = {https://github.com/yourusername/HOR}
+  url = {https://github.com/dylanmmarshall/nth_order_covariation}
 }
 ```
 
@@ -24,6 +24,7 @@ If you use this code, please cite:
 ## License
 
 MIT
+
 
 
 
