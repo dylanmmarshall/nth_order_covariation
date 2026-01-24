@@ -81,29 +81,6 @@ Q = (H + H¹² + H¹³ + H²³ + H¹²³ + H¹³²) / 6
 
 This symmetrization is **model-agnostic** — works for symmetric models (MRF, autoencoders) and asymmetric models (transformers, autoregressive).
 
-
-## Results
-
-### Contact Prediction (1st Order)
-
-| Model | AUC | Notes |
-|-------|-----|-------|
-| MRF1 | 0.882 | λ=0.01, with bias |
-| MRF2 | 0.872 | λ=0.10, no bias |
-| LAE1 | 0.810 | rank=512, λ=0.01 |
-| LAE2 | 0.315 | needs minibatch training |
-| VAE1 | 0.011 | oversmooths pairwise structure |
-| VAE2 | 0.119 | deeper architecture |
-
-### Triwise Interactions (2nd Order)
-
-Computed on subsectioned MSA (positions 190-250, L=60):
-- 6 Hessian tensors (MRF1, MRF2, LAE1, LAE2, VAE1, VAE2)
-- Shape: (60, 20, 60, 20, 60, 20) per model
-- Total: ~42 GB stored in `results/20260108/`
-
-Example triwise slice exhibits non-random structure — see `visualization/tensor_reduction.ipynb` for interactive 3D plots.
-
 ## Future Work
 
 **Immediate:**
@@ -145,3 +122,4 @@ MIT
 ## Contact
 
 For questions or collaboration: dylanmontanamarshall@gmail.com
+
