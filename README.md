@@ -1,6 +1,6 @@
 **Extracting Higher Order Interactions via Multivariate MacLaurin Expansion**
 
-This framework extends 1st order pairwise sequence saliency analysis to capture 0th order (field) and 2nd (hessian) interactions.
+This framework extends 1st order pairwise sequence saliency analysis to capture 0th order (field) and 2nd order (hessian) interactions.
 
 ## Citation
 
@@ -24,5 +24,6 @@ If you use this code, please cite:
 ## License
 
 MIT
+
 
 
