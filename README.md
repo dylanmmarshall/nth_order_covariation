@@ -12,17 +12,19 @@ H = compute_hessian(forward_fn, params, L, A)  # (L, A, L, A, L, A)
 
 ```
 nth_order_covariation/
-├── models.py                      # MRF, LAE, VAE + derivative extraction
-├── modal_app.py                   # GPU training orchestration
-├── autoencoders_modal.ipynb       # Training & tensor extraction
-├── data/                          # MSA, contacts, structure
-├── results/                       # Fields, Jacobians, Hessians
+├── models.py                       # MRF, LAE, VAE + derivative extraction
+├── modal_app.py                    # GPU training orchestration
+├── autoencoders_modal.ipynb        # Training & tensor extraction
+├── data/                           # MSA, contacts, structure
+├── results/                        # Fields, Jacobians, Hessians
 └── visualization/
-    ├── modal_app.py               # GPU analysis orchestration
+    ├── modal_app.py                # GPU analysis orchestration
     └── tensor_reduction_full.ipynb # Reduction & visualization
 ```
 
 Ongoing: math and code for 3rd order + relations
+
+---
 
 ## Citation
 
