@@ -1,6 +1,6 @@
-# Extracting Nth Order Interactions Within Multiple Sequence Alignments Using a Multivariate MacLaurin Expansion
+# Nth Order Covariation Determination
 
-This framework extends 1st order pairwise sequence saliency analysis to distinguish 0th order sitewise and 2nd order triwise interactions within a MSA.
+This repository demonstrates the determination of the first three orders of covariation within a MSA using a multivariate Maclaurin expansion of a trained autoencoder. This framework extends 1st order pairwise sequence saliency analysis to distinguish 0th order sitewise interactions and 2nd order triwise interactions within a MSA.
 
 ## Citation
 
@@ -26,6 +26,7 @@ If you use this code, please cite:
 MIT
 
 Note: not peer-reviewed work
+
 
 
 
