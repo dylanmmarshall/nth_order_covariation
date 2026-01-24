@@ -624,7 +624,7 @@ def mrf_hessian(params, L, A, center=True, verbose=False):
     Returns (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
     Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
 
-    WARNING: Memory = d³ * 4 bytes. For L=60: 6.9 GB. Only for small L.
+    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         return jnp.log(mrf_forward(params, x, L, A) + 1e-8)
@@ -649,7 +649,7 @@ def lae_hessian(params, L, A, center=True, verbose=False):
     Returns (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
     Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
 
-    WARNING: Memory = d³ * 4 bytes. For L=60: 6.9 GB. Only for small L.
+    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         return jnp.log(lae_forward(params, x, L, A) + 1e-8)
@@ -675,7 +675,7 @@ def vae_hessian(params, L, A, n_enc_layers, n_dec_layers, use_blosum,
     Returns (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
     Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
 
-    WARNING: Memory = d³ * 4 bytes. For L=60: 6.9 GB. Only for small L.
+    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         probs, _, _ = vae_forward(params, x, L, A, n_enc_layers, n_dec_layers,
@@ -710,7 +710,7 @@ def compute_hessian(forward_fn, params, L, A, center=True, verbose=False):
         (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
         Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
 
-    WARNING: Memory = d³ * 4 bytes. For L=60: 6.9 GB. Only for small L.
+    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         probs = forward_fn(params, x, L, A)
