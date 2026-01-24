@@ -145,11 +145,3 @@ MIT
 ## Contact
 
 For questions or collaboration: dylanmontanamarshall@gmail.com
-
-
-
-# CHECKPOINT
-
-results/ generated on 20260123
-
-
