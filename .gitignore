@@ -13,8 +13,12 @@ wheels/
 *.npz
 *.zip
 data/
-results/
+results/hess_*.npy
 tmp/
 
 # Jupyter notebook outputs
 autoencoders_jax.ipynb
+
+# Markdown files (except README)
+*.md
+!README.md
