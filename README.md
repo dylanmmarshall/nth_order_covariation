@@ -1,6 +1,6 @@
 # Extracting Nth Order Interactions Within Multiple Sequence Alignments Using a Multivariate MacLaurin Expansion
 
-This framework extends 1st order pairwise sequence saliency analysis to capture 0th order sitewise and 2nd order triwise interactions within a MSA.
+This framework extends 1st order pairwise sequence saliency analysis to distinguish 0th order sitewise and 2nd order triwise interactions within a MSA.
 
 ## Citation
 
@@ -24,6 +24,7 @@ If you use this code, please cite:
 ## License
 
 MIT
+
 
 
 
