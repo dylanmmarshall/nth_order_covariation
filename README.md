@@ -1,4 +1,4 @@
-**Extracting higher order interactions via multivariate MacLaurin expansion**
+**Extracting Higher Order Interactions via Multivariate MacLaurin Expansion**
 
 This framework extends 1st order pairwise sequence saliency analysis to capture 0th order (field) and 2nd (hessian) interactions.
 
@@ -7,9 +7,9 @@ This framework extends 1st order pairwise sequence saliency analysis to capture 
 If you use this code, please cite:
 
 ```
-@software{hor2025,
+@software{nth_order_covariation2025,
   author = {Marshall, Dylan},
-  title = {Higher-Order Relations: Epistatic Interactions via Multivariate Taylor Expansion},
+  title = {Extracting Higher Order Interactions via Multivariate MacLaurin Expansion**},
   year = {2025},
   url = {https://github.com/yourusername/HOR}
 }
@@ -17,10 +17,11 @@ If you use this code, please cite:
 
 ## References
 
-- **[Marshall et al.](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1)** - Pairwise saliency
-- **[Zhang et al.](https://www.pnas.org/doi/10.1073/pnas.2406285121)** - Categorical Jacobian
-- **[Varadi et al. (2024)](https://academic.oup.com/nar/article/52/D1/D368/7337620?login=false)** - AlphaFold Database
+- **[Marshall et al.](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1)** - pairwise saliency
+- **[Zhang et al.](https://www.pnas.org/doi/10.1073/pnas.2406285121)** - categorical jacobian, related to 
+- **[Varadi et al. (2024)](https://academic.oup.com/nar/article/52/D1/D368/7337620?login=false)** - alphafold database
 
 ## License
 
 MIT
+
