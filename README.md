@@ -1,6 +1,15 @@
-# Nth Order Covariation Determination
+# Nth Order Covariation Determination in MSAs
 
-This repository demonstrates the determination of the first three orders of covariation within a MSA using a multivariate Maclaurin expansion of a trained autoencoder. This framework extends 1st order pairwise sequence saliency analysis to distinguish 0th order sitewise interactions and 2nd order triwise interactions within a MSA.
+This repository showcases the determination of the first three orders of covariation within a MSA using a multivariate Maclaurin expansion of a trained autoencoder. This framework extends 1st order pairwise sequence saliency analysis to distinguish 0th order sitewise interactions and 2nd order triwise interactions within a MSA.
+
+```
+from models import compute_fields, compute_jacobian, compute_hessian                                                                                                         
+```
+
+# Works with any model: forward_fn(params, x, L, A) -> probs 
+h = compute_fields(forward_fn, params, L, A) # (L, A)
+J = compute_jacobian(forward_fn, params, L, A) # (L, A, L, A) 
+H = compute_hessian(forward_fn, params, L, A)  # (L, A, L, A, L, A)
 
 ## Citation
 
