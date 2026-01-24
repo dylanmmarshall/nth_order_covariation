@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Data files (large)
+*.npz
+*.zip
+data/
+results/
+tmp/
+
+# Jupyter notebook outputs
+autoencoders_jax.ipynb
