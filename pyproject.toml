@@ -1,8 +1,9 @@
 [project]
 name = "higher-order-relations"
 version = "0.1.0"
-description = "Add your description here"
+description = "Nth order covariation extraction from MSAs using autoencoder derivatives"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
     "flax>=0.12.2",

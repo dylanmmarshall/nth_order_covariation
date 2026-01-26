@@ -24,6 +24,8 @@ nth_order_covariation/
 
 Ongoing: math and code for 3rd order + relations
 
+Contributions are invited
+
 ## References
 
 - **[Marshall et al. (2020)](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1)** - pairwise saliency
