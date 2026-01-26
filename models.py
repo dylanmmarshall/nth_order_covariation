@@ -180,7 +180,7 @@ def mrf_fields(params, L, A, center=True):
     """Compute 0th-order fields (sitewise conservation) for MRF.
 
     Returns (L, A) tensor: h[i,a] = log p(x=0)_ia
-    This is the constant term in the Maclaurin expansion — not a derivative.
+    This is the constant term in the Maclaurin expansion -- not a derivative.
 
     Args:
         params: MRF parameters
@@ -293,7 +293,7 @@ def lae_fields(params, L, A, center=True):
     """Compute 0th-order fields (sitewise conservation) for LAE.
 
     Returns (L, A) tensor: h[i,a] = log p(x=0)_ia
-    This is the constant term in the Maclaurin expansion — not a derivative.
+    This is the constant term in the Maclaurin expansion -- not a derivative.
 
     Args:
         params: LAE parameters
@@ -455,7 +455,7 @@ def vae_fields(params, L, A, n_enc_layers, n_dec_layers, use_blosum, center=True
     """Compute 0th-order fields (sitewise conservation) for VAE (deterministic mode).
 
     Returns (L, A) tensor: h[i,a] = log p(x=0)_ia
-    This is the constant term in the Maclaurin expansion — not a derivative.
+    This is the constant term in the Maclaurin expansion -- not a derivative.
 
     Args:
         params: VAE parameters
@@ -539,7 +539,7 @@ def compute_fields(forward_fn, params, L, A, center=True):
 
     Returns:
         (L, A) field tensor: h[i,a] = log p(x=0)_ia
-        This is the constant term in the Maclaurin expansion — not a derivative.
+        This is the constant term in the Maclaurin expansion -- not a derivative.
     """
     probs = forward_fn(params, jnp.zeros((L, A)), L, A)
     h = jnp.log(probs + 1e-8)
@@ -587,7 +587,7 @@ def _hessian_slice(log_prob_fn, x0, output_idx):
         output_idx: Which flattened output index (0 to L*A-1)
 
     Returns:
-        (L, A, L, A) tensor: H[j,b,k,c] = d²log p_i / dx_jb dx_kc
+        (L, A, L, A) tensor: H[j,b,k,c] = d^2 log p_i / dx_jb dx_kc
     """
     def scalar_fn(x):
         return log_prob_fn(x).ravel()[output_idx]
@@ -599,10 +599,10 @@ def symmetrize_hessian(H):
 
     H has shape (L, A, L, A, L, A) with indices (i, a, j, b, k, c).
 
-    Applies S₃ symmetry: averages over all 6 permutations of the three
+    Applies S_3 symmetry: averages over all 6 permutations of the three
     (position, alphabet) pairs to extract undirected triwise interactions.
 
-    This is model-agnostic — works for symmetric models (autoencoders, Potts)
+    This is model-agnostic -- works for symmetric models (autoencoders, Potts)
     and asymmetric models (transformers, autoregressive).
 
     Returns:
@@ -621,10 +621,10 @@ def symmetrize_hessian(H):
 def mrf_hessian(params, L, A, center=True, verbose=False):
     """Compute symmetrized Hessian of log-probabilities for MRF.
 
-    Returns (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
-    Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
+    Returns (L, A, L, A, L, A) tensor with full S_3 symmetry over (position, alphabet) pairs.
+    Q[i,a,j,b,k,c] = "triwise saliency" -- symmetric under all permutations.
 
-    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
+    WARNING: Memory scales as O((L*A)^3). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         return jnp.log(mrf_forward(params, x, L, A) + 1e-8)
@@ -646,10 +646,10 @@ def mrf_hessian(params, L, A, center=True, verbose=False):
 def lae_hessian(params, L, A, center=True, verbose=False):
     """Compute symmetrized Hessian of log-probabilities for LAE.
 
-    Returns (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
-    Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
+    Returns (L, A, L, A, L, A) tensor with full S_3 symmetry over (position, alphabet) pairs.
+    Q[i,a,j,b,k,c] = "triwise saliency" -- symmetric under all permutations.
 
-    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
+    WARNING: Memory scales as O((L*A)^3). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         return jnp.log(lae_forward(params, x, L, A) + 1e-8)
@@ -672,10 +672,10 @@ def vae_hessian(params, L, A, n_enc_layers, n_dec_layers, use_blosum,
                 center=True, verbose=False):
     """Compute symmetrized Hessian of log-probabilities for VAE (deterministic mode).
 
-    Returns (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
-    Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
+    Returns (L, A, L, A, L, A) tensor with full S_3 symmetry over (position, alphabet) pairs.
+    Q[i,a,j,b,k,c] = "triwise saliency" -- symmetric under all permutations.
 
-    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
+    WARNING: Memory scales as O((L*A)^3). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         probs, _, _ = vae_forward(params, x, L, A, n_enc_layers, n_dec_layers,
@@ -707,10 +707,10 @@ def compute_hessian(forward_fn, params, L, A, center=True, verbose=False):
         verbose: Print progress
 
     Returns:
-        (L, A, L, A, L, A) tensor with full S₃ symmetry over (position, alphabet) pairs.
-        Q[i,a,j,b,k,c] = "triwise saliency" — symmetric under all permutations.
+        (L, A, L, A, L, A) tensor with full S_3 symmetry over (position, alphabet) pairs.
+        Q[i,a,j,b,k,c] = "triwise saliency" -- symmetric under all permutations.
 
-    WARNING: Memory scales as O((L*A)³). Large L may exceed GPU memory.
+    WARNING: Memory scales as O((L*A)^3). Large L may exceed GPU memory.
     """
     def log_prob_fn(x):
         probs = forward_fn(params, x, L, A)

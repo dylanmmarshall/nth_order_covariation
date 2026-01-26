@@ -24,30 +24,11 @@ nth_order_covariation/
 
 Ongoing: math and code for 3rd order + relations
 
----
-
-## Citation
-
-If you use this code, please cite:
-
-```
-@software{nth_order_covariation2025,
-  author = {Marshall, Dylan},
-  title = {Nth Order Covariation Determination in MSAs},
-  year = {2025},
-  url = {https://github.com/dylanmmarshall/nth_order_covariation}
-}
-```
-
 ## References
 
 - **[Marshall et al. (2020)](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1)** - pairwise saliency
 - **[Zhang et al. (2024)](https://www.pnas.org/doi/10.1073/pnas.2406285121)** - categorical jacobian, related to pairwise saliency
 - **[Varadi et al. (2024)](https://academic.oup.com/nar/article/52/D1/D368/7337620?login=false)** - alphafold database
-
-## License
-
-MIT
 
 ---
 
