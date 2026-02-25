@@ -1,8 +1,0 @@
-Hessian tensors hosted on my google drive
-
-- [hess_mrf1.npy](https://drive.google.com/file/d/1JlvPsPJ2vKnWbFK6wD1Y_5Qq5yF52YLY/view?usp=sharing)
-- [hess_mrf2.npy](https://drive.google.com/file/d/1mDUnUy-Amn_Wgabv0Ki1jMBbeWFuY5mW/view?usp=sharing)
-- [hess_lae1.npy](https://drive.google.com/file/d/1qvdLex7Dm8V2Azq23zqovh_45fZKKBE4/view?usp=sharing)
-- [hess_lae2.npy](https://drive.google.com/file/d/1PgmcU3Tow_qdQ21LFlvd-HDmDT696cNI/view?usp=sharing)
-- [hess_vae1.npy](https://drive.google.com/file/d/1jsFp_yXyTx0zbIj1SEeuCtLGoylwosjb/view?usp=sharing)
-- [hess_vae2.npy](https://drive.google.com/file/d/1HBRBw_TcdSkaFlMK6ADx-tbLhRp346Bn/view?usp=sharing)
