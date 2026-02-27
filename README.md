@@ -17,20 +17,40 @@ nth_order_covariation/
 ├── autoencoders_modal.ipynb        # Training & tensor extraction
 ├── data/                           # MSA, contacts, structure
 ├── results/                        # Fields, Jacobians, Hessians
-└── visualization/
-    ├── modal_app.py                # GPU analysis orchestration
-    └── tensor_reduction_full.ipynb # Conclusion
+├── visualization/
+│   ├── modal_app.py                # GPU analysis orchestration
+│   └── tensor_reduction_full.ipynb # Conclusion
+├── LICENSE                         # Apache 2.0
+├── NOTICE                          # attribution requirements
+└── CITATION.cff                    # citation metadata
 ```
 
 Ongoing: math and code for 3rd order + relations
-
-Contributions are invited
 
 ## References
 
 - **[Marshall et al. (2020)](https://www.biorxiv.org/content/10.1101/2020.11.29.402875v1)** - pairwise saliency
 - **[Zhang et al. (2024)](https://www.pnas.org/doi/10.1073/pnas.2406285121)** - categorical jacobian, related to pairwise saliency
 - **[Varadi et al. (2024)](https://academic.oup.com/nar/article/52/D1/D368/7337620?login=false)** - alphafold database
+
+---
+
+## License
+
+[Apache License 2.0](LICENSE). See the [NOTICE](NOTICE) file for attribution requirements.
+
+## Citation
+
+If you build upon the ideas or code in this repository, use or reference this work, please cite it. Click **"Cite this repository"** on the [GitHub page](https://github.com/dylanmmarshall/nth_order_covariation) for BibTeX/APA, or use:
+
+```bibtex
+@software{marshall2026nthorder,
+  title   = {Nth Order Covariation Determination in MSAs},
+  author  = {Marshall, Dylan},
+  year    = {2026},
+  url     = {https://github.com/dylanmmarshall/nth_order_covariation}
+}
+```
 
 ---
 
