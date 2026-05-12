@@ -24,3 +24,6 @@ autoencoders_jax.ipynb
 # Markdown files (except README)
 *.md
 !README.md
+
+# macOS
+.DS_Store
