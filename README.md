@@ -17,10 +17,9 @@ nth_order_covariation/
 ├── autoencoders_modal.ipynb        # Training & tensor extraction
 ├── data/                           # MSA, contacts, structure
 ├── results/                        # Fields, Jacobians, Hessians
-├── visualization/
-│   ├── modal_app.py                # GPU analysis orchestration
-│   └── tensor_reduction_full.ipynb # Conclusion
-└── LICENSE                         # Apache 2.0
+└── visualization/
+    ├── modal_app.py                # GPU analysis orchestration
+    └── tensor_reduction_full.ipynb # Conclusion
 ```
 
 Ongoing: math and code for 3rd order + relations
@@ -35,7 +34,7 @@ Ongoing: math and code for 3rd order + relations
 
 ## License
 
-[Apache License 2.0](LICENSE).
+None. All rights reserved.
 
 ---
 
