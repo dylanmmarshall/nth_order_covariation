@@ -40,3 +40,6 @@ None. All rights reserved.
 
 Note: not peer-reviewed work
 
+---
+
+I am no longer running this project. Inquiries should be directed to [Dr. Sergey Ovchinnikov](so3@mit.edu).
